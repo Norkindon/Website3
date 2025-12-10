@@ -338,7 +338,7 @@ box-shadow: 1px 4px 14px -5px rgba(0,0,0,0.94);
 .modal-right .price {
   line-height: 1.5;
   font: var(--syne-font);
-  font-size: 4rem;
+  font-size: 16rem;
   font-weight: bold;
   color: #f0c040;
 }
