@@ -203,41 +203,34 @@ async function loadGallery() {
   });
 }
 
+window.addEventListener("load", () => {
+    const headerCenter = document.querySelector(".header-center");
+    const menuButton = document.querySelector(".header-right .menu");
 
+    // Function to update menu based on window width
+    function updateMenu() {
+        if (window.innerWidth > 768) {
+            headerCenter.classList.remove("active");
+            headerCenter.style.display = "flex";  // Desktop layout
+            menuButton.style.display = "none";
+        } else {
+            headerCenter.style.display = "flex";  // keep flex for mobile dropdown
+            menuButton.style.display = "block";   // show hamburger
+        }
+    }
 
-// // Navigation links data
-// const navLinks = [
-//   { text: "About Me", href: "about.html" },
-//   { text: "Gallery", href: "gallery.html" },
-//   { text: "Commissions", href: "commissions.html" },
-//   { text: "ArtLive", href: "ArtLive.html" },
-// ];
+    // Initial check
+    updateMenu();
 
-// // Select the container
-// const navContainer = document.querySelector(".header-center");
+    // Update on resize
+    window.addEventListener("resize", updateMenu);
 
-// // Create links dynamically
-// navLinks.forEach(link => {
-//   const div = document.createElement("div");
-//   div.className = "nav-link";
-  
-//   const a = document.createElement("a");
-//   a.href = link.href;
-//   a.textContent = link.text;
+    // Toggle dropdown on click
+    menuButton.addEventListener("click", () => {
+        headerCenter.classList.toggle("active");
+    });
+});
 
-//   div.appendChild(a);
-//   navContainer.appendChild(div);
-// });
-
-// // Mobile menu toggle
-// const menuButton = document.querySelector('.header-right .menu');
-// const navCenter = document.querySelector('.header-center');
-
-// menuButton.addEventListener('click', () => {
-//   navCenter.classList.toggle('active');
-
-
-// });
 
 
 loadGallery();
