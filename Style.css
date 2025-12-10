@@ -2,38 +2,40 @@
    GLOBAL STYLES
 ========================= */
 @import url("Fonts.css");
-
 :root {
     --big-font: var(--playfair-font);
     --medium-font: var(--geo-font);
     --small-font: var(--baskervville-font);
 
-  /* Element-specific font variables */
-  --font-body: var(--big-font);
-  --font-heading: var(--big-font);
-  --font-header: var(--syne-font);
-  --font-nav: var(--fragment-font);
-  --font-buttons: var(--medium-start-2p-font);
-  --font-code: var(--small-font);
-  --font-footer: var(--small-font);
-  --font-price: var(--fragment-font);
-  --font-modal-text: var(--syne-font);
+    --font-body: var(--big-font);
+    --font-heading: var(--big-font);
+    --font-header: var(--syne-font);
+    --font-nav: var(--fragment-font);
+    --font-buttons: var(--medium-start-2p-font);
+    --font-code: var(--small-font);
+    --font-footer: var(--small-font);
+    --font-price: var(--fragment-font);
+    --font-modal-text: var(--syne-font);
 
-    /* Font size scaling for modal text */
-  --modal-title-size: 2rem;       /* largest */
-  --modal-year-size: 1.75rem;     /* slightly smaller */
-  --modal-dimensions-size: 1.5rem;/* smaller still */
-  --modal-description-size: 1.25rem;
-  --modal-font-price: 4rem; /* smallest */
+    --modal-title-size: 2rem;
+    --modal-year-size: 1.75rem;
+    --modal-dimensions-size: 1.5rem;
+    --modal-description-size: 1.25rem;
+    --modal-font-price: 4rem;
+}
 
+/* Mobile overrides */
 @media (max-width: 768px) {
-  --modal-title-size: 1rem;       /* largest */
-  --modal-year-size: 0.75rem;     /* slightly smaller */
-  --modal-dimensions-size: 0.75rem;/* smaller still */
-  --modal-description-size: 0.75rem; /* smallest */
-  --modal-font-price: 1.5rem;
+    :root {
+        --modal-title-size: 1rem;
+        --modal-year-size: 0.75rem;
+        --modal-dimensions-size: 0.75rem;
+        --modal-description-size: 0.75rem;
+        --modal-font-price: 1rem;
+    }
 }
-}
+
+
 
 * {
   box-sizing: border-box;
