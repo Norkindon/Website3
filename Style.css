@@ -24,14 +24,14 @@
   --modal-year-size: 1.75rem;     /* slightly smaller */
   --modal-dimensions-size: 1.5rem;/* smaller still */
   --modal-description-size: 1.25rem;
-  --modal-price-size: 4rem; /* smallest */
+  --modal-font-price: 4rem; /* smallest */
 
 @media (max-width: 768px) {
   --modal-title-size: 1rem;       /* largest */
   --modal-year-size: 0.75rem;     /* slightly smaller */
   --modal-dimensions-size: 0.75rem;/* smaller still */
   --modal-description-size: 0.75rem; /* smallest */
-  --modal-price-size: 2rem;
+  --modal-font-price: 1rem;
 }
 }
 
@@ -387,7 +387,9 @@ box-shadow: 1px 4px 14px -5px rgba(0,0,0,0.94);
 .modal-right .buy-btn {
   background: #f0c040;
   color: #111;
+  
     z-index: 3;
+
 
   
 }
