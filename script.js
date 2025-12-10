@@ -115,39 +115,6 @@ contactBtn.addEventListener('click', () => {
   contactForm.classList.toggle('show');
 });
 
-// Navigation links data
-const navLinks = [
-  { text: "About Me", href: "about.html" },
-  { text: "Gallery", href: "gallery.html" },
-  { text: "Commissions", href: "commissions.html" },
-  { text: "ArtLive", href: "ArtLive.html" },
-];
-
-// Select the container
-const navContainer = document.querySelector(".header-center");
-
-// Create links dynamically
-navLinks.forEach(link => {
-  const div = document.createElement("div");
-  div.className = "nav-link";
-  
-  const a = document.createElement("a");
-  a.href = link.href;
-  a.textContent = link.text;
-
-  div.appendChild(a);
-  navContainer.appendChild(div);
-});
-
-// Mobile menu toggle
-const menuButton = document.querySelector('.header-right .menu');
-const navCenter = document.querySelector('.header-center');
-
-menuButton.addEventListener('click', () => {
-  navCenter.classList.toggle('active');
-
-
-});
 
   function resizeModal() {
     const maxWidth = window.innerWidth * 0.9;
@@ -238,6 +205,39 @@ async function loadGallery() {
 
 
 
+// // Navigation links data
+// const navLinks = [
+//   { text: "About Me", href: "about.html" },
+//   { text: "Gallery", href: "gallery.html" },
+//   { text: "Commissions", href: "commissions.html" },
+//   { text: "ArtLive", href: "ArtLive.html" },
+// ];
+
+// // Select the container
+// const navContainer = document.querySelector(".header-center");
+
+// // Create links dynamically
+// navLinks.forEach(link => {
+//   const div = document.createElement("div");
+//   div.className = "nav-link";
+  
+//   const a = document.createElement("a");
+//   a.href = link.href;
+//   a.textContent = link.text;
+
+//   div.appendChild(a);
+//   navContainer.appendChild(div);
+// });
+
+// // Mobile menu toggle
+// const menuButton = document.querySelector('.header-right .menu');
+// const navCenter = document.querySelector('.header-center');
+
+// menuButton.addEventListener('click', () => {
+//   navCenter.classList.toggle('active');
+
+
+// });
 
 
 loadGallery();
