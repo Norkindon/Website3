@@ -21,12 +21,20 @@
     --modal-year-size: 1.75rem;
     --modal-dimensions-size: 1.5rem;
     --modal-description-size: 1.25rem;
-    --modal-font-price: 16rem;
+    --modal-font-price: 8rem;
 }
 
 
 /* Mobile overrides */
-
+@media (max-width: 768px) {
+  :root {
+    --modal-title-size: 1rem;
+    --modal-year-size: 0.75rem;
+    --modal-dimensions-size: 0.75rem;
+    --modal-description-size: 0.75rem;
+    --modal-font-price: 4rem;
+  }
+}
 
 
 
