@@ -1,0 +1,93 @@
+[
+      {
+    "id": 1,
+    "name": "Celestial Drift",
+    "size": "138 x 102 CM",
+    "description": "Subtle star-like highlights create a sense of cosmic expansiveness.",
+    "price": "24,500",
+    "image": "Image (1).jpg",
+    "date": "1993-10-30"
+  },
+  {
+    "id": 2,
+    "name": "Crimson Echo",
+    "size": "120 x 95 CM",
+    "description": "Bold strokes conveying energy and movement across a dynamic canvas.",
+    "price": "18,500",
+    "image": "Image (2).jpg",
+    "date": "1994-06-12"
+  },
+  {
+    "id": 3,
+    "name": "Twilight Veil",
+    "size": "130 x 100 CM",
+    "description": "A moody landscape capturing the fleeting moments of dusk.",
+    "price": "22,000",
+    "image": "Image (3).jpg",
+    "date": "1998-09-23"
+  },
+  {
+    "id": 4,
+    "name": "Golden Drift",
+    "size": "115 x 90 CM",
+    "description": "Warm, flowing colors that suggest serenity and subtle motion.",
+    "price": "19,500",
+    "image": "Image (4).jpg",
+    "date": "2001-03-17"
+  },
+  {
+    "id": 5,
+    "name": "Silent Horizon",
+    "size": "140 x 105 CM",
+    "description": "Minimalist approach emphasizing space and quiet tension.",
+    "price": "25,000",
+    "image": "Image (5).jpg",
+    "date": "1996-11-05"
+  },
+  {
+    "id": 6,
+    "name": "Emerald Cascade",
+    "size": "125 x 95 CM",
+    "description": "Vivid greens cascading with fluid textures and depth.",
+    "price": "20,500",
+    "image": "Image (6).jpg",
+    "date": "1999-07-29"
+  },
+  {
+    "id": 7,
+    "name": "Frosted Reverie",
+    "size": "135 x 100 CM",
+    "description": "Cool tones evoking the quiet stillness of winter landscapes.",
+    "price": "17,500",
+    "image": "Image (7).jpg",
+    "date": "2000-12-15"
+  },
+  {
+    "id": 8,
+    "name": "Amber Veins",
+    "size": "128 x 92 CM",
+    "description": "Organic patterns resembling veins of light through stone.",
+    "price": "21,000",
+    "image": "Image (8).jpg",
+    "date": "1995-04-02"
+  },
+  {
+    "id": 9,
+    "name": "Luminous Drift",
+    "size": "122 x 88 CM",
+    "description": "Soft radiance and flowing gradients create an ethereal mood.",
+    "price": "16,500",
+    "image": "Image (9).jpg",
+    "date": "1997-08-19"
+  },
+  {
+    "id": 10,
+    "name": "Obsidian Pulse",
+    "size": "130 x 97 CM",
+    "description": "Dark, intense contrasts explore rhythm and depth in abstraction.",
+    "price": "28,500",
+    "image": "Image (10).jpg",
+    "date": "2002-05-06"
+  }
+
+]

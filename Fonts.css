@@ -1,0 +1,19 @@
+/* fonts.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Fragment+Mono:ital@0;1&family=Geo:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Press+Start+2P&family=VT323&family=Viaoda+Libre&display=swap');
+/* Font variables stored in shorthand format */
+:root {
+  --playfair-font: normal 400 1em/1 "Playfair Display", serif;
+  --vt323-font: normal 400 1em/1 "VT323", monospace;
+  --geo-font: normal 400 1em/1 "Geo", sans-serif;
+  --geo-italic-font: italic 400 1em/1 "Geo", sans-serif;
+  --press-start-2p-font: normal 400 1em/1 "Press Start 2P", system-ui;
+  --baskervville-font: normal 400 1em/1 "Baskervville", serif;
+  --fragment-font: normal 400 1em/1 "Fragment Mon", monospace;
+  --syne-font: normal 400 1em/1 "Syne Mono", monospace;
+}
+
+  

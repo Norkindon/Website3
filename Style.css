@@ -1,0 +1,681 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+@import url("Fonts.css");
+
+:root {
+    --big-font: var(--playfair-font);
+    --medium-font: var(--geo-font);
+    --small-font: var(--baskervville-font);
+
+  /* Element-specific font variables */
+  --font-body: var(--big-font);
+  --font-heading: var(--big-font);
+  --font-header: var(--syne-font);
+  --font-nav: var(--fragment-font);
+  --font-buttons: var(--medium-start-2p-font);
+  --font-code: var(--small-font);
+  --font-footer: var(--small-font);
+  --font-price: var(--fragment-font);
+  --font-modal-text: var(--syne-font);
+
+    /* Font size scaling for modal text */
+  --modal-title-size: 2rem;       /* largest */
+  --modal-year-size: 1.75rem;     /* slightly smaller */
+  --modal-dimensions-size: 1.5rem;/* smaller still */
+  --modal-description-size: 1.25rem;
+  --modal-price-size: 4rem; /* smallest */
+
+@media (max-width: 768px) {
+  --modal-title-size: 1rem;       /* largest */
+  --modal-year-size: 0.75rem;     /* slightly smaller */
+  --modal-dimensions-size: 0.75rem;/* smaller still */
+  --modal-description-size: 0.75rem; /* smallest */
+  --modal-price-size: 2rem;
+}
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  
+  background-color: #f0c040;
+  background-blend-mode: difference;
+  /* background-image: url("Assets/Thepain.png"); */
+  background-size: cover;
+  box-sizing: border-box;
+  
+  font: var(--font-body); /* Global body font */
+}
+* {
+  scrollbar-width: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+/* =========================
+   HEADER STYLES
+========================= */
+
+/* Logo / Artist Name */
+.artistName {
+    color: #f0c040;
+    font-size: 1em;  /* fixed invalid "1sem" */
+}
+
+/* Header container */
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    font: var(--font-header);
+}
+
+/* Left section (logo) */
+.header-left h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font: var(--font-heading);
+}
+
+/* Center section (nav links) - Desktop layout */
+.header-center {
+    display: flex;
+    gap: 30px;
+}
+
+/* Nav link styles */
+.header-center .nav-link a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    font: var(--font-nav);
+}
+
+.header-center .nav-link a:hover {
+    color: #f0c040;
+}
+
+/* Right section (menu button) */
+.header-right .menu {
+    display: none; /* hidden on desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 8px 15px;
+    background: #222;
+    border-radius: 8px;
+    font: var(--font-buttons);
+    transition: background 0.2s ease;
+}
+
+.header-right .menu:hover {
+    background: #333;
+}
+
+/* =========================
+   MOBILE STYLES
+========================= */
+@media (max-width: 768px) {
+
+    /* Hide desktop nav, show mobile menu */
+    .header-center {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;          /* below header */
+        left: 0;
+        width: 100%;
+        background: #111;
+        overflow: hidden;
+        max-height: 0;      /* hidden initially */
+        transition: max-height 0.4s ease-out;
+    }
+
+    .header-center.active {
+        max-height: 500px;  /* adjust to fit links */
+    }
+
+    /* Mobile nav link styles */
+    .header-center .nav-link {
+        padding: 12px 20px;
+        border-top: 1px solid #222;
+    }
+
+    /* Show menu button on mobile */
+    .header-right .menu {
+        display: block;
+    }
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  gap: 24px;
+  /* overflow:hidden; */
+
+}
+.art-card {
+  position: relative; /* required for overlay positioning */
+  background: white;
+  border-radius: 16px 16px 4px 4px;
+  overflow: hidden;
+box-shadow: 1px 4px 14px -5px rgba(0,0,0,0.94);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  
+}
+
+.art-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  
+
+}
+
+.art-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2em;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  
+  
+}
+
+.art-overlay .art-name {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 1em;
+  font: var(--syne-font);
+  
+}
+
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 1px 12px 28px 6px rgba(0,0,0,0.94);
+}
+
+.art-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   MODAL STYLES
+========================= */
+.art-modal {
+  position: fixed;
+  inset: 0;
+  /* background: rgba(0,0,0,0.8); */
+    background: rgba(0, 0, 0, 0.8);
+
+  
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  
+
+}
+
+.art-modal.show {
+  display: flex;
+}
+
+.art-modal-content {
+  /* background: #1c1c1c; */
+    background: black;
+
+  color: #fff;
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  animation: slideIn 0.4s ease forwards;
+  max-width: 90vw;
+  max-height: 90vh;
+  /* background-image: url("Assets/tICKET.png");
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: cover;
+  background-blend-mode: overlay; */
+  
+  
+}
+
+.modal-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: none;
+}
+
+.modal-left img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 1em;
+    border-radius: 0.25em;
+
+}
+
+.modal-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1em;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal-right h2 {
+  font-size: 2rem;
+  font: var(--font-modal-text);         /* all use same font */
+  font-size: var(--modal-title-size);
+  margin-bottom: 0.5em;
+}
+
+.modal-right .year {
+  font: var(--font-modal-text);
+  font-size: var(--modal-year-size);
+  color: #e6e6e6;
+  margin-bottom: 1em;
+}
+
+.modal-right .dimensions {
+  font: var(--font-modal-text);
+  font-size: var(--modal-dimensions-size);
+  color: #d9d9d9;
+  margin-bottom: 1em;
+}
+
+.modal-right .description {
+  font: var(--font-modal-text);
+  font-size: var(--modal-description-size);
+  color: #cccccc;
+  line-height: 1.5;
+  margin-bottom: 1em;
+   line-height: 1.5;
+}
+
+.modal-right .price {
+  font: var(--font-modal-text);
+  
+  line-height: 1.5;
+  
+  font-size: var(--modal-font-price);
+  font-weight: bold;
+  color: #f0c040;
+}
+
+
+.modal-right .year,
+.modal-right .dimensions,
+.modal-right .description {
+  margin-bottom: 12px;
+  
+}
+
+
+
+.modal-right .price-and-buttons {
+  margin-top: auto; /* push to bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  
+}
+
+
+
+.modal-right .buttons {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  
+}
+
+.modal-right .buttons button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font: var(--vt323-font);
+  font-size: 2em;
+  font-weight: bold;
+  
+}
+
+.modal-right .buy-btn {
+  background: #f0c040;
+  color: #111;
+    z-index: 3;
+
+  
+}
+
+.modal-right .contact-btn {
+  background: #2413c0;
+  color: #fff;
+  z-index: 3;
+}
+/* Base button improvements */
+.modal-right .buttons button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: 
+    transform 0.18s ease, 
+    box-shadow 0.18s ease, 
+    background 0.25s ease;
+}
+
+/* Hover: soft lift + glow */
+.modal-right .buttons button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Click animation */
+.modal-right .buttons button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) inset;
+}
+
+/* Shine animation on hover */
+.modal-right .buttons button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+.modal-right .buttons button:hover::after {
+  animation: shine 0.8s ease forwards;
+}
+
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 120%;
+  }
+}
+
+/* Unique glow per button */
+.modal-right .buy-btn:hover {
+  box-shadow: 0 12px 30px rgba(240, 192, 64, 0.5);
+}
+
+.modal-right .contact-btn:hover {
+  box-shadow: 0 12px 30px rgba(36, 19, 192, 0.5);
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .art-modal-content {
+    flex-direction: column;
+    width: 90vw;
+    height: 90vh;
+  }
+
+  .modal-left {
+    width: 100%;
+  }
+
+  .modal-right {
+    width: 100%;
+  }
+
+  .modal-right .buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.modal-right {
+  position: relative; /* needed for absolute child */
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 40px 20px 60px;
+  color: #888;
+  font-size: 0.9rem;
+  font: var(--font-footer); /* Footer font */
+}
+
+
+.contact-form {
+  background-color: #111;
+  gap: 15px;
+  width: calc(50% - 24px);
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, opacity 0.5s ease;
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+  right: 1.05em;
+  bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  z-index: 2;
+  overflow-y: hidden;
+}
+.contact-form.show {
+  height: 80%;          /* full height as per your current design */
+  opacity: 1;
+}
+
+
+/* === Form Field Groups === */
+.contact-name,
+.contact-contacts,
+.contact-message {
+      flex: 1;           /* This makes it expand */
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* === Labels === */
+.contact-name label,
+.contact-contacts label,
+.contact-message label {
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* === Inputs and Textareas === */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;  
+  flex: 1;           /* Take all space inside .contact-message */
+  resize: none;             
+  
+
+  box-sizing: border-box;    /* Include padding/border in width */
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #fff;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #555;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #666;
+  background: #181818;
+}
+
+/* === Contact Fields Row Layout === */
+.contact-contacts {
+  flex-direction: column;   /* Horizontal layout */
+  gap: 8px;
+}
+
+.contact-contacts input {
+  flex: 1;               /* Share space equally */
+}
+
+/* === Textarea Sizing === */
+.contact-message textarea {
+    flex: 1;           /* Take all space inside .contact-message */
+  resize: none;        /* Adjust for compact 200px height */
+  resize: none;
+}
+
+/* === Send Button === */
+.contact-message-send {
+  align-self: flex-end;
+}
+
+.contact-message-send .sendbutton {
+  padding: 6px 14px;
+  font-size: 16px;
+  font-weight: 200;
+  border: none;
+  border-radius: 0.25em;
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  /* width: 10em; */
+  transition: 0.2s ease;
+  display: flex;       
+  margin-top: 1em;       /* Make the container a flex box */
+  justify-content: center;    /* Horizontal alignment (optional) */
+  align-items: center;        /* Vertical alignment */
+  height: 100%; 
+   margin-top: auto;  
+  
+}
+
+.contact-message-send .sendbutton:hover {
+  background: #b10808;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+}
+
+.contact-message {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-message textarea {
+  flex: 2;
+  resize: none;
+}
+
+.contact-message-send {
+  margin-top: auto;
+}
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%;          /* almost full width on mobile */
+    right: 5%;           /* center-ish */
+    bottom: 5em;
+    padding: 1em;
+    height: 70%;         /* slightly smaller */
+  }
+
+  .contact-contacts {
+    flex-direction: column;  /* stacked instead of row */
+  }
+
+  .contact-message textarea {
+    flex: 1;  /* fill remaining space nicely */
+  }
+
+  .contact-message-send .sendbutton {
+    width: 100%;  /* full width button on mobile */
+  }
+}
