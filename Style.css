@@ -26,15 +26,7 @@
 
 
 /* Mobile overrides */
-@media (max-width: 768px) {
-  :root {
-    --modal-title-size: 1rem;
-    --modal-year-size: 0.75rem;
-    --modal-dimensions-size: 0.75rem;
-    --modal-description-size: 0.75rem;
-    --modal-font-price: 1rem;
-  }
-}
+
 
 
 
